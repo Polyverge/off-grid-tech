@@ -6,24 +6,27 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 function Layout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname()
+  const pathname = usePathname();
   const activeStepIndex = steps.findIndex(({ href }) => pathname === href);
-  const backLink = steps[activeStepIndex - 1]?.href || '';
-  const nextLink = steps[activeStepIndex + 1]?.href || '';
-  
+  const backLink = steps[activeStepIndex - 1]?.children[0]?.href || '';
+  const nextLink = steps[activeStepIndex + 1]?.children[0]?.href || '';
+
   return (
-    <div className="max-w-2xl mx-auto p-6">
-      <ProductConfiguratorStepper {...{ pathname }} />
+    <div className="max-w-6xl mx-auto p-6">
+      {pathname !== '/cofig' && (
+        <ProductConfiguratorStepper
+          {...{ pathname }}
+        />
+      )}
       <main className="mt-6">{children}</main>
-      <h1></h1>
-      <nav className="flex justify-between mt-5">
+      <nav className="flex justify-between mt-6">
         <Link href={backLink}>
           <Button disabled={!!nextLink} variant={'secondary'}>
             Back
           </Button>
         </Link>
         <Link href={nextLink}>
-          <Button disabled={!nextLink}>Next</Button>
+          <Button disabled={!!nextLink}>Next</Button>
         </Link>
       </nav>
     </div>

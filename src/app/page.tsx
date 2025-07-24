@@ -9,7 +9,7 @@ export default function Home() {
       className="flex flex-col h-[100vh] items-center justify-center"
     >
       <h1 className="text-2xl mb-8 font-bold uppercase">Ready to be free?</h1>
-      <Link href={'app'}>
+      <Link href={'config'}>
         <Button className="cursor-pointer">Start here</Button>
       </Link>
     </section>
