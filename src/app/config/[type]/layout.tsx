@@ -1,11 +1,11 @@
-'use client'
-import { Button } from "@/components/ui/button";
-import { steps } from "@/features/prodcut/configurator/constants/navigation";
-import { ProductConfiguratorStepper } from "@/features/prodcut/configurator/ui/product-configurator-stepper";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+'use client';
+import { Button } from '@/components/ui/button';
+import { steps } from '@/features/prodcut/configurator/constants/navigation';
+import { ProductConfiguratorStepper } from '@/features/prodcut/configurator/ui/product-configurator-stepper';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const activeStepIndex = steps.findIndex(({ href }) => pathname === href);
   const backLink = steps[activeStepIndex - 1]?.children[0]?.href || '';
@@ -14,9 +14,7 @@ function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="max-w-6xl mx-auto p-6">
       {pathname !== '/cofig' && (
-        <ProductConfiguratorStepper
-          {...{ pathname }}
-        />
+        <ProductConfiguratorStepper {...{ pathname }} />
       )}
       <main className="mt-6">{children}</main>
       <nav className="flex justify-between mt-6">
@@ -32,5 +30,3 @@ function Layout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
-
-export default Layout;

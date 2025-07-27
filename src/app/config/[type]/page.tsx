@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
 export default function Page() {
-  const redirectUrl = 'app/house/location';
+  const redirectUrl = 'app/[type]/location';
   redirect(redirectUrl);
   return (
     <section className="flex flex-col text-center">
