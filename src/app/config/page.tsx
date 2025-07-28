@@ -51,16 +51,18 @@ const cards = [
 function Page() {
   const iconSize = '30';
   return (
-    <>
-      <section id="headline" className="mb-6 text-center">
-        <h2 className="font-bold text-2xl mb-2">
-          What would you like to configure?
+    <div className="flex justify-center gap-20 items-center">
+      <section id="headline" className="mb-6">
+        <h2 className="font-bold text-3xl mb-4">
+          What kind of electrical setup do you need?
         </h2>
-        <h3 className="font-normal mb-10">
-          Tell us what you would like to configure and we can get started
+        <h3 className="font-normal text-lg text-muted-foreground">
+          Choose a system to get started. Whether you're building a full
+          off-grid power solution or customizing a small setup, we'll walk you
+          through everything step by step.
         </h3>
       </section>
-      <section id="selection" className="flex gap-4">
+      <section id="selection" className="grid grid-cols-2 grid-rows-2 gap-4">
         {cards.map((card, index) => (
           <Card key={index} className="w-full max-w-sm">
             <CardHeader>
@@ -78,7 +80,7 @@ function Page() {
           </Card>
         ))}
       </section>
-    </>
+    </div>
   );
 }
 
