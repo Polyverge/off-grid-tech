@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import {
   NavigationMenu,
+  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
@@ -31,9 +32,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="sticky top-0 z-50 w-full shadow-sm bg-background/30 backdrop-blur">
+          <header className="sticky justify-items-center top-0 z-50 border-white border-b-1 w-full shadow-gray-900 bg-background/30 backdrop-blur">
             <div className="container flex h-16 items-center justify-between px-6 md:px-6">
-              <Link href="/" className="flex items-center space-x-2">
+              <Link href="/" className="flex -center space-x-2">
                 <Zap className="h-8 w-8 text-primary" />
                 <span className="text-xl font-bold">Off Grid Tech</span>
               </Link>
@@ -62,6 +63,12 @@ export default function RootLayout({
                     >
                       Contact
                     </NavigationMenuLink>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Button>Login</Button>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Button variant={'secondary'}>Sign up</Button>
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
