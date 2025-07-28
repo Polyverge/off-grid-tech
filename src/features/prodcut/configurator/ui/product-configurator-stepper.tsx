@@ -17,7 +17,7 @@ function ProductConfiguratorStepper({
   return (
     <section
       id="stepper"
-      className="flex ml-mb gap-4 justify-between items-center"
+      className="flex mb-20 mt-10 gap-4 justify-between items-center"
     >
       {activePath?.map(({ href, name }, index) => (
         <Fragment key={href}>
