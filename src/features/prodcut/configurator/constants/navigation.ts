@@ -1,3 +1,4 @@
+import { AreaChart, MapPin, SearchIcon } from "lucide-react";
 import { NavigationItem } from "../model/navigation";
 
 const houseBasepath = '/config/house'
@@ -8,9 +9,9 @@ export const steps: NavigationItem[] = [
   { href: '/config', name: 'Get started', children: [] },
   {
     href: '/config/house', name: 'House', children: [
-      { href: `${houseBasepath}/location`, name: 'Location' },
-      { href: `${houseBasepath}/area`, name: 'Area' },
-      { href: `${houseBasepath}/product`, name: 'Product' }
+      { href: `${houseBasepath}/location`, name: 'Location', Icon: MapPin },
+      { href: `${houseBasepath}/area`, name: 'Area', Icon: AreaChart },
+      { href: `${houseBasepath}/product`, name: 'Product', Icon: SearchIcon }
     ]
   },
   { href: '/config/boat', name: 'Boat', children: [{ href: `${boatBasepath}/style`, name: 'style' }] },
