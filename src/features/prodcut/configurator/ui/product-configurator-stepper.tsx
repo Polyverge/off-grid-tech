@@ -7,14 +7,8 @@ interface ProductConfiguratorStepperParams {
   pathname: string;
 }
 
-const line = (iActivePath: boolean) => (
-  <>
-    <span
-      className={`border-t border-white grow last:hidden ${iActivePath ? 'border-black' : 'border-gray-300'}`}
-    >
-      &nbsp;
-    </span>
-  </>
+const line = (active: boolean) => (
+  <div className={`h-0.5 flex-1 ${active ? 'bg-white' : 'bg-gray-600'}`}></div>
 );
 
 function ProductConfiguratorStepper({
@@ -29,24 +23,31 @@ function ProductConfiguratorStepper({
   return (
     <section
       id="stepper"
-      className="flex mb-20 mt-10 gap-4 justify-between items-center"
+      className="flex mb-20 mt-10 gap-4 justify-between items-center w-full"
     >
       {activePath?.map(({ href, name, Icon }, index) => (
         <Fragment key={href}>
           <Link
-            className={`flex flex-col items-center cursor-pointer`}
+            className="flex flex-col items-center cursor-pointer"
             href={href}
           >
             <Icon />
             <p className="font-mb mt-2">{name}</p>
           </Link>
-          {line(iActivePath(href))}
-          <p
-            className={`flex p-4 mb-6 items-center justify-center font-mb w-5 h-5 rounded-full hover:bg-blue-400 hover:text-white ${iActivePath(href) ? 'bg-blue-600 text-white' : 'bg-gray-500'}`}
-          >
-            {index + 1}
-          </p>
-          {line(iActivePath(href))}
+
+          <div className="flex items-center flex-1 last:hidden">
+            {line(iActivePath(href))}
+            <p
+              className={`flex p-4 mx-5 cursor-pointer items-center justify-center font-mb w-5 h-5 rounded-full z-10 hover:bg-blue-400 hover:text-white ${
+                iActivePath(href)
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-500 text-white'
+              }`}
+            >
+              {index + 1}
+            </p>
+            {line(iActivePath(href))}
+          </div>
         </Fragment>
       ))}
     </section>
