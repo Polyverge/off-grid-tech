@@ -16,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {pathname !== '/cofig' && (
         <ProductConfiguratorStepper {...{ pathname }} />
       )}
-      <main className="mt-6">{children}</main>
+      {children}
       <nav className="flex justify-between mt-6">
         <Link href={backLink}>
           <Button disabled={!!nextLink} variant={'secondary'}>

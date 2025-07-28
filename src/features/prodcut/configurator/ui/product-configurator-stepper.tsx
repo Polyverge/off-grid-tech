@@ -26,14 +26,14 @@ function ProductConfiguratorStepper({
             href={href}
           >
             <p
-              className={`flex p-4 items-center justify-center font-mb text-black w-5 h-5 rounded-full hover:bg-blue-400 hover:text-white ${iActivePath(href) ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+              className={`flex p-4 items-center justify-center font-mb w-5 h-5 rounded-full hover:bg-blue-400 hover:text-white ${iActivePath(href) ? 'bg-blue-600 text-white' : 'bg-gray-500'}`}
             >
               {index + 1}
             </p>
-            <p className="font-mb text-black">{name}</p>
+            <p className="font-mb">{name}</p>
           </Link>
           <span
-            className={`border-t border-black grow last:hidden ${iActivePath(href) ? 'border-black' : 'border-gray-300'}`}
+            className={`border-t border-white grow last:hidden ${iActivePath(href) ? 'border-black' : 'border-gray-300'}`}
           >
             &nbsp;
           </span>
