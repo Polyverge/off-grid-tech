@@ -17,7 +17,7 @@ export default function Page() {
   const [location, setLocation] = useState({ latitude: 0, longitude: 0 });
   const hasUserLocation = location.latitude !== 0;
   return (
-    <section id="location" className="flex justify-center gap-50 items-center">
+    <>
       <section id="headeline" className="mb-15">
         <h2 className="text-2xl mb-5 font-bold">Where you at?</h2>
         <h3 className="text-lg">
@@ -66,6 +66,6 @@ export default function Page() {
           </Button>
         </CardFooter>
       </Card>
-    </section>
+    </>
   );
 }

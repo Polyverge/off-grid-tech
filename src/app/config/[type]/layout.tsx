@@ -12,11 +12,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const nextLink = steps[activeStepIndex + 1]?.children[0]?.href || '';
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
+    <div className="mx-50 p-6 ">
       {pathname !== '/cofig' && (
         <ProductConfiguratorStepper {...{ pathname }} />
       )}
-      {children}
+      <section className="flex justify-center gap-50 items-center mt-50">
+        {children}
+      </section>
       <nav className="flex justify-between mt-15">
         <Link href={backLink}>
           <Button disabled={!!nextLink} variant={'secondary'}>
