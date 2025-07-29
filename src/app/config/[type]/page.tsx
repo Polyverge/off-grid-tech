@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
-export default function Page() {
+export default function TypePage() {
   const redirectUrl = 'app/[type]/location';
   redirect(redirectUrl);
   return (

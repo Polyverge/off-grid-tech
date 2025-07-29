@@ -13,7 +13,7 @@ import { handleUserSharingLocation } from '@/features/prodcut/configurator/utils
 import { Divide, MapPin } from 'lucide-react';
 import { useState } from 'react';
 
-export default function Page() {
+export default function LocationPage() {
   const [location, setLocation] = useState({ latitude: 0, longitude: 0 });
   const hasUserLocation = location.latitude !== 0;
   return (

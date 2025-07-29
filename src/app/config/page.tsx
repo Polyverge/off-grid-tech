@@ -48,7 +48,7 @@ const cards = [
   },
 ];
 
-function Page() {
+function ConfigPage() {
   const iconSize = '30';
   return (
     <div className="flex justify-center gap-20 items-center">
