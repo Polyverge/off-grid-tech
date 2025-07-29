@@ -9,8 +9,10 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { handleUserSharingLocation } from '@/features/prodcut/configurator/utils/location';
-import { Divide, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { useState } from 'react';
 
 export default function LocationPage() {
@@ -26,12 +28,26 @@ export default function LocationPage() {
           much solar energy, or other power sources you might need.
         </h3>
       </section>
-      <div className="w-full">
-        <Card>
-          <CardHeader>Area for solar</CardHeader>
-          <CardContent>
+
+      <Card className="w-full min-w-[400px]">
+        <CardContent>
+          <div className="flex flex-col gap-4">
+            <Label>Address</Label>
+            <div className="grid grid-cols-6 gap-2">
+              <Input className="col-span-4" placeholder="Street" />
+              <Input className="col-span-2" placeholder="No." />
+            </div>
+            <div className="grid grid-cols-6 gap-2">
+              <Input className="col-span-2" placeholder="ZIP Code" />
+              <Input className="col-span-4" placeholder="Country" />
+            </div>
+            <div className="flex items-center flex-1">
+              <div className="h-0.5 flex-1 bg-gray-500" />
+              <Label className="mx-5">Or</Label>
+              <div className="h-0.5 flex-1 bg-gray-500" />
+            </div>
             <div
-              className="w-full h-full min-h-40 bg-gray-200 rounded flex items-center justify-center bg-cover bg-center"
+              className="w-full h-full min-h-30 bg-gray-200 rounded flex items-center justify-center bg-cover bg-center"
               style={
                 hasUserLocation
                   ? {
@@ -56,16 +72,17 @@ export default function LocationPage() {
                 />
               )}
             </div>
-          </CardContent>
-          <CardFooter>
-            <div className="flex gap-4">
-              <Button onClick={() => handleUserSharingLocation(setLocation)}>
-                Share loction
-              </Button>
-            </div>
-          </CardFooter>
-        </Card>
-      </div>
+          </div>
+        </CardContent>
+        <CardFooter>
+          <div className="flex gap-4">
+            <Button onClick={() => handleUserSharingLocation(setLocation)}>
+              Share loction
+            </Button>
+            <Button variant={'secondary'}>Clear</Button>
+          </div>
+        </CardFooter>
+      </Card>
     </>
   );
 }
