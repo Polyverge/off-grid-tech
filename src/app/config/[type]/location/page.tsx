@@ -20,7 +20,7 @@ export default function LocationPage() {
   const hasUserLocation = location.latitude !== 0;
   return (
     <>
-      <section id="headeline" className="">
+      <section id="headeline">
         <h2 className="text-2xl font-bold">Where you at?</h2>
         <h3 className="text-lg">
           To get a good estimate of how much sunlight you receive throughout the
@@ -31,6 +31,43 @@ export default function LocationPage() {
 
       <Card className="w-full md:min-w-[400px]">
         <CardContent>
+          <div
+            className="w-full h-full min-h-30 bg-gray-200 rounded flex items-center justify-center bg-cover bg-center"
+            style={
+              hasUserLocation
+                ? {
+                    backgroundImage:
+                      "url('https://picsum.photos/id/212/1280/720')",
+                  }
+                : {}
+            }
+          >
+            {hasUserLocation ? (
+              <div className="backdrop-blur-xs bg-gray-500/40 p-7 rounded">
+                <p className="font-bold">You live in:</p>
+                <p className="text-primary">Berlepschstraße 6</p>
+                <p className="text-primary">34119 Kassel, Germany</p>
+              </div>
+            ) : (
+              <MapPin
+                fill="#d45252"
+                stroke={'#000'}
+                strokeWidth={0.5}
+                size={80}
+              />
+            )}
+          </div>
+          <Button
+            className="mt-6"
+            onClick={() => handleUserSharingLocation(setLocation)}
+          >
+            Share loction <MapPin />
+          </Button>
+          <div className="flex items-center my-5 flex-1">
+            <div className="h-0.5 flex-1 bg-gray-500" />
+            <Label className="mx-5">Or</Label>
+            <div className="h-0.5 flex-1 bg-gray-500" />
+          </div>
           <div className="flex flex-col gap-4">
             <Label>Address</Label>
             <div className="grid grid-cols-6 gap-2">
@@ -41,44 +78,10 @@ export default function LocationPage() {
               <Input className="col-span-2" placeholder="ZIP Code" />
               <Input className="col-span-4" placeholder="Country" />
             </div>
-            <div className="flex items-center flex-1">
-              <div className="h-0.5 flex-1 bg-gray-500" />
-              <Label className="mx-5">Or</Label>
-              <div className="h-0.5 flex-1 bg-gray-500" />
-            </div>
-            <div
-              className="w-full h-full min-h-30 bg-gray-200 rounded flex items-center justify-center bg-cover bg-center"
-              style={
-                hasUserLocation
-                  ? {
-                      backgroundImage:
-                        "url('https://picsum.photos/id/212/1280/720')",
-                    }
-                  : {}
-              }
-            >
-              {hasUserLocation ? (
-                <div className="backdrop-blur-xs bg-gray-500/40 p-7 rounded">
-                  <p className="font-bold">You live in:</p>
-                  <p className="text-primary">Berlepschstraße 6</p>
-                  <p className="text-primary">34119 Kassel, Germany</p>
-                </div>
-              ) : (
-                <MapPin
-                  fill="#d45252"
-                  stroke={'#000'}
-                  strokeWidth={0.5}
-                  size={80}
-                />
-              )}
-            </div>
           </div>
         </CardContent>
         <CardFooter>
           <div className="flex gap-4">
-            <Button onClick={() => handleUserSharingLocation(setLocation)}>
-              Share loction
-            </Button>
             <Button variant={'secondary'}>Clear</Button>
           </div>
         </CardFooter>
