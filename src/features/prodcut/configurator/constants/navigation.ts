@@ -10,8 +10,8 @@ export const steps: NavigationItem[] = [
   {
     href: '/config/house', name: 'House', children: [
       { href: `${houseBasepath}/location`, name: 'Location', Icon: MapPin },
-      { href: `${houseBasepath}/area`, name: 'Area', Icon: AreaChart },
-      { href: `${houseBasepath}/product-search`, name: 'Products', Icon: SearchIcon },
+      { href: `${houseBasepath}/installation-details`, name: 'Installation Details', Icon: AreaChart },
+      { href: `${houseBasepath}/energy-usage`, name: 'Energy Usage', Icon: SearchIcon },
       { href: `${houseBasepath}/results`, name: 'Results', Icon: ChartBar },
     ]
   },
