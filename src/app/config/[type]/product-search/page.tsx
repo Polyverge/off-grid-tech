@@ -1,5 +1,5 @@
 import Page from "../page";
 
-export default Page() {
-    
+export default function ProductSearchPage() {
+  return <section></section>;
 }
