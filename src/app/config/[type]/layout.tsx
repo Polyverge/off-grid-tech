@@ -16,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {pathname !== '/cofig' && (
         <ProductConfiguratorStepper {...{ pathname }} />
       )}
-      <section className="flex justify-center gap-50 items-center mt-50">
+      <section className="flex justify-center gap-50 items-center">
         {children}
       </section>
       <nav className="flex justify-between mt-15">
