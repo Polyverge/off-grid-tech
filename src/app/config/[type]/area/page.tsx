@@ -35,59 +35,66 @@ export default function AreaPage() {
           fine-tune the setup for maximum efficiency.
         </h3>
       </section>
-      <div className="w-full min-w-[400px]">
-        <Card>
-          <CardHeader>Area avaible for solar</CardHeader>
-          <CardContent>
-            <div className="flex flex-col gap-4">
+      <Card className="w-full min-w-[400px]">
+        <CardHeader>Area avaible for solar</CardHeader>
+        <CardContent>
+          <div className="flex flex-col gap-4">
+            <Select>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Where" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Installation type</SelectLabel>
+                  <SelectItem value="sqm">Roof mounted</SelectItem>
+                  <SelectItem value="sqft">Ground mounted</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+            <Label>Space avaible</Label>
+            <div className="grid grid-cols-6 gap-2">
+              <Input
+                className="col-span-2"
+                value={area}
+                type="number"
+                placeholder="Area avaible"
+              />
               <Select>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Where" />
+                <SelectTrigger className="w-full col-span-4">
+                  <SelectValue placeholder="Unit of Measurment" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectLabel>Installation type</SelectLabel>
-                    <SelectItem value="sqm">Roof mounted</SelectItem>
-                    <SelectItem value="sqft">Ground mounted</SelectItem>
+                    <SelectLabel>Unit of Measurment</SelectLabel>
+                    <SelectItem value="sqm">Square Meters (M²)</SelectItem>
+                    <SelectItem value="sqft">Square Feet (Ft²)</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
-              <Label>Space avaible</Label>
-              <div className="grid grid-cols-2 gap-4">
-                <Input value={area} type="number" placeholder="Area avaible" />
-                <Select>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Unit" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>Unit of Measurment</SelectLabel>
-                      <SelectItem value="sqm">Square Meters (M²)</SelectItem>
-                      <SelectItem value="sqft">Square Feet (Ft²)</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <Input value={area} type="number" placeholder="Angle" />
-                <Select>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Direction" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>Facing Direction</SelectLabel>
-                      <SelectItem value="north">North</SelectItem>
-                      <SelectItem value="east">East</SelectItem>
-                      <SelectItem value="south">South</SelectItem>
-                      <SelectItem value="west">West</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </div>
-              <Label>Shading information</Label>
+            </div>
+            <div className="grid grid-cols-6 gap-2">
+              <Input
+                className="col-span-1"
+                value={area}
+                type="number"
+                placeholder="Angle"
+              />
               <Select>
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full col-span-3">
+                  <SelectValue placeholder="Direction" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Facing Direction</SelectLabel>
+                    <SelectItem value="north">North</SelectItem>
+                    <SelectItem value="east">East</SelectItem>
+                    <SelectItem value="south">South</SelectItem>
+                    <SelectItem value="west">West</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+              <Select>
+                <SelectTrigger className="w-full col-span-2">
                   <SelectValue placeholder="Shading" />
                 </SelectTrigger>
                 <SelectContent>
@@ -100,15 +107,15 @@ export default function AreaPage() {
                 </SelectContent>
               </Select>
             </div>
-          </CardContent>
-          <CardFooter>
-            <div className="flex gap-4">
-              <Button>Submit</Button>
-              <Button variant={'secondary'}>Clear</Button>
-            </div>
-          </CardFooter>
-        </Card>
-      </div>
+          </div>
+        </CardContent>
+        <CardFooter>
+          <div className="flex gap-2">
+            <Button>Submit</Button>
+            <Button variant={'secondary'}>Clear</Button>
+          </div>
+        </CardFooter>
+      </Card>
     </>
   );
 }
