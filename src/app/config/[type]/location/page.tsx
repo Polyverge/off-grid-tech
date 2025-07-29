@@ -29,7 +29,7 @@ export default function LocationPage() {
         </h3>
       </section>
 
-      <Card className="w-full md:min-w-[400px]">
+      <Card className="w-full lg:min-w-[400px]">
         <CardContent>
           <div
             className="w-full h-full min-h-30 bg-gray-200 rounded flex items-center justify-center bg-cover bg-center"

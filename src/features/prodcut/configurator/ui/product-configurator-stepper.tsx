@@ -20,7 +20,7 @@ function ProductConfiguratorStepper({
   return (
     <section
       id="stepper"
-      className="flex mb-10 md:mb-20 mt-5 gap-4 justify-between items-center w-full"
+      className="flex mb-10 lg:mb-20 mt-5 gap-4 justify-between items-center w-full"
     >
       {findActivePath(pathname, steps)?.map(({ href, name, Icon }, index) => (
         <Fragment key={href}>
@@ -39,7 +39,7 @@ function ProductConfiguratorStepper({
           <div className="flex items-center flex-1 last:hidden">
             {line(iActivePath(href))}
             <p
-              className={`p-4 mx-5 hidden md:flex cursor-pointer items-center justify-center font-mb w-5 h-5 rounded-full z-10 hover:bg-blue-400 hover:text-white ${
+              className={`p-4 mx-5 hidden lg:flex cursor-pointer items-center justify-center font-mb w-5 h-5 rounded-full z-10 hover:bg-blue-400 hover:text-white ${
                 iActivePath(href)
                   ? 'bg-blue-600 text-white'
                   : 'bg-gray-500 text-white'
