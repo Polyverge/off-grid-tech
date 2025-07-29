@@ -21,7 +21,7 @@ export default function LocationPage() {
   return (
     <>
       <section id="headeline" className="">
-        <h2 className="text-2xl mb-5 font-bold">Where you at?</h2>
+        <h2 className="text-2xl font-bold">Where you at?</h2>
         <h3 className="text-lg">
           To get a good estimate of how much sunlight you receive throughout the
           year, we'll need to check your location. This helps us determine how
@@ -29,7 +29,7 @@ export default function LocationPage() {
         </h3>
       </section>
 
-      <Card className="w-full min-w-[400px]">
+      <Card className="w-full md:min-w-[400px]">
         <CardContent>
           <div className="flex flex-col gap-4">
             <Label>Address</Label>

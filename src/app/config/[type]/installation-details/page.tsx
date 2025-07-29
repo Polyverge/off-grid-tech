@@ -25,7 +25,7 @@ export default function AreaPage() {
   return (
     <>
       <section id="headeline" className="mb-15">
-        <h2 className="text-2xl mb-5 font-bold">Got some room?</h2>
+        <h2 className="text-2xl font-bold">Got some room?</h2>
         <h3 className="text-lg">
           Too help us estimate how much solar we can realistically fit on your
           property, we’ll need to know the available space. This lets us figure
@@ -35,7 +35,7 @@ export default function AreaPage() {
           fine-tune the setup for maximum efficiency.
         </h3>
       </section>
-      <Card className="w-full min-w-[400px]">
+      <Card className="w-full md:min-w-[400px]">
         <CardHeader>Area avaible for solar</CardHeader>
         <CardContent>
           <div className="flex flex-col gap-4">

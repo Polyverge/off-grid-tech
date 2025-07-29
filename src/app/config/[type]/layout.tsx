@@ -14,11 +14,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const backLink = activePath[acitveIndex - 1]?.href || '';
 
   return (
-    <div className="mx-50 p-6 ">
+    <div className="md:mx-50 p-6 ">
       {pathname !== '/cofig' && (
         <ProductConfiguratorStepper {...{ pathname }} />
       )}
-      <section className="flex justify-center gap-50 items-center">
+      <section className="flex flex-col gap-5 md:flex-row justify-center md:gap-50 items-center">
         {children}
       </section>
       <nav className="flex justify-between mt-15">

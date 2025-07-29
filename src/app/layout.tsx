@@ -36,7 +36,9 @@ export default function RootLayout({
             <div className="container flex h-16 items-center justify-between px-6 md:px-6">
               <Link href="/" className="flex -center space-x-2">
                 <Zap className="h-8 w-8 text-primary" />
-                <span className="text-xl font-bold">Off Grid Tech</span>
+                <span className="text-xl font-bold hidden xs:block">
+                  Off Grid Tech
+                </span>
               </Link>
               <NavigationMenu className="hidden md:flex">
                 <NavigationMenuList>
