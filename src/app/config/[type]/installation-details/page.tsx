@@ -34,7 +34,7 @@ import {
 import { useState } from 'react';
 
 export default function AreaPage() {
-  const [area, setArea] = useState(40);
+  const [area, setArea] = useState('');
   return (
     <>
       <section id="headeline">
@@ -49,7 +49,7 @@ export default function AreaPage() {
       <Card className="w-full lg:min-w-[400px]">
         <CardContent>
           <div className="flex flex-col gap-4">
-            <Select>
+            <Select required>
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Where" />
               </SelectTrigger>
@@ -71,7 +71,9 @@ export default function AreaPage() {
                 className="col-span-2"
                 value={area}
                 type="number"
-                onChange={(e) => setArea(Number(e.target.value))}
+                min={0}
+                max={90}
+                onChange={(e) => setArea(e.target.value)}
                 placeholder="Area avaible"
               />
               <Select>
@@ -97,6 +99,7 @@ export default function AreaPage() {
                 value={area}
                 type="number"
                 placeholder="Angle"
+                required
               />
               <Select>
                 <SelectTrigger className="w-full col-span-3">
