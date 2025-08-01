@@ -84,4 +84,4 @@ function ConfigPage() {
   );
 }
 
-export default Page;
+export default ConfigPage;
