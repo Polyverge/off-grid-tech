@@ -33,7 +33,7 @@ function ProductConfiguratorStepper({
                 iActivePath(href) ? 'stroke-blue-600' : 'stroke-primary'
               }
             />
-            <p className="font-mb mt-2 hidden">{name}</p>
+            <p className="font-mb mt-2 hidden md:block  ">{name}</p>
           </Link>
 
           <div className="flex items-center flex-1 last:hidden">
