@@ -11,7 +11,12 @@ import {
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { handleUserSharingLocation } from '@/features/prodcut/configurator/utils/location';
+import {
+  ProductConfiguratorHeadlineWrapper,
+  ProductConfiguratorHeadlineMain,
+  ProductConfiguratorHeadlineSecondary,
+} from '@/features/product/configurator/ui/product-configurator-headlines';
+import { handleUserSharingLocation } from '@/features/product/configurator/utils/location';
 import { MapPin } from 'lucide-react';
 import { useState } from 'react';
 
@@ -20,15 +25,16 @@ export default function LocationPage() {
   const hasUserLocation = location.latitude !== 0;
   return (
     <>
-      <section id="headeline">
-        <h2 className="text-2xl font-bold">Where you at?</h2>
-        <h3 className="text-lg">
+      <ProductConfiguratorHeadlineWrapper>
+        <ProductConfiguratorHeadlineMain>
+          Where you at?
+        </ProductConfiguratorHeadlineMain>
+        <ProductConfiguratorHeadlineSecondary>
           To get a good estimate of how much sunlight you receive throughout the
           year, we'll need to check your location. This helps us determine how
           much solar energy, or other power sources you might need.
-        </h3>
-      </section>
-
+        </ProductConfiguratorHeadlineSecondary>
+      </ProductConfiguratorHeadlineWrapper>
       <Card className="w-full lg:min-w-[400px]">
         <CardContent>
           <div

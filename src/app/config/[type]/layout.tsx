@@ -1,8 +1,8 @@
 'use client';
 import { Button } from '@/components/ui/button';
-import { steps } from '@/features/prodcut/configurator/constants/navigation';
-import { ProductConfiguratorStepper } from '@/features/prodcut/configurator/ui/product-configurator-stepper';
-import { findActivePath } from '@/features/prodcut/configurator/utils/navigation';
+import { steps } from '@/features/product/configurator/constants/navigation';
+import { ProductConfiguratorStepper } from '@/features/product/configurator/ui/product-configurator-stepper';
+import { findActivePath } from '@/features/product/configurator/utils/navigation';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 

@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { steps } from '@/features/prodcut/configurator/constants/navigation';
+import { steps } from '@/features/product/configurator/constants/navigation';
 import { Waves, Home, Car, House } from 'lucide-react';
 import Link from 'next/link';
 

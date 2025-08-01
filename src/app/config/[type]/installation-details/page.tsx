@@ -19,6 +19,11 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import {
+  ProductConfiguratorHeadlineWrapper,
+  ProductConfiguratorHeadlineMain,
+  ProductConfiguratorHeadlineSecondary,
+} from '@/features/product/configurator/ui/product-configurator-headlines';
+import {
   ArrowDown,
   ArrowLeft,
   ArrowRight,
@@ -37,15 +42,17 @@ export default function AreaPage() {
   const [area, setArea] = useState('');
   return (
     <>
-      <section id="headeline">
-        <h2 className="text-2xl font-bold">Got some room?</h2>
-        <h3 className="text-lg">
+      <ProductConfiguratorHeadlineWrapper>
+        <ProductConfiguratorHeadlineMain>
+          Got some room?
+        </ProductConfiguratorHeadlineMain>
+        <ProductConfiguratorHeadlineSecondary>
           Too help us estimate how much solar we can realistically fit on your
           property, we’ll need to know the available space. Since things change
           depending on whether your roof is flat or sloped, please provide the
           roof angle. That helps us fine-tune the setup for maximum efficiency.
-        </h3>
-      </section>
+        </ProductConfiguratorHeadlineSecondary>
+      </ProductConfiguratorHeadlineWrapper>
       <Card className="w-full lg:min-w-[400px]">
         <CardContent>
           <div className="flex flex-col gap-4">
