@@ -6,14 +6,14 @@ import Link from "next/link";
 export default function Header() {
     return (
       <header className="sticky justify-items-center top-0 z-50 border-white border-b-1 w-full shadow-gray-900 bg-background/30 backdrop-blur">
-        <div className="container flex h-16 items-center justify-between px-6 lg:px-6">
-          <Link href="/" className="flex -center space-x-2">
+        <div className="container grid grid-cols-6 gap-4 w-full h-16 items-center px-6 lg:px-6">
+          <Link href="/" className="flex -center space-x-2 col-span-2">
             <Zap className="h-8 w-8 text-primary" />
             <span className="text-xl font-bold hidden md:block">
               Off Grid Tech
             </span>
           </Link>
-          <NavigationMenu className="hidden lg:flex">
+          <NavigationMenu className="hidden lg:flex col-span-3">
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink
@@ -39,6 +39,10 @@ export default function Header() {
                   Contact
                 </NavigationMenuLink>
               </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          <NavigationMenu className="col-span-1 justify-self-end">
+            <NavigationMenuList>
               <NavigationMenuItem>
                 <Button>Login</Button>
               </NavigationMenuItem>
@@ -47,7 +51,6 @@ export default function Header() {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-
           {/* Mobile menu button */}
           <Button variant="ghost" size="sm" className="lg:hidden"></Button>
         </div>
